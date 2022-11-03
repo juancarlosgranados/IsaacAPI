@@ -28,7 +28,7 @@ public class IsaacViewModel extends AndroidViewModel{
         this.app = app;
     }
 
-    public MutableLiveData<List<Personajes>> getPokemones() {
+    public MutableLiveData<List<Personajes>> getPersonajes() {
         if(personajes==null){
 
         }
@@ -42,7 +42,7 @@ public class IsaacViewModel extends AndroidViewModel{
 
         executor.execute(() -> {
             IsaacApi api = new IsaacApi();
-            ArrayList<Personajes> pokemons = api.getPersonajes();
+            ArrayList<Personajes> personajes = api.getPersonajes();
 
         });
     }
