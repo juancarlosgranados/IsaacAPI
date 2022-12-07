@@ -28,8 +28,6 @@ import java.util.concurrent.Executors;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private IsaacAdapter adapter;
-    private ArrayList<Personajes> items;
 
     @Override
     public View onCreateView(
@@ -45,43 +43,13 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        items = new ArrayList<>();
-        adapter =new IsaacAdapter(
-                getContext(),
-                R.layout.lv_isaac_row,
-                items
-        );
-        binding.lvisaac.setAdapter(adapter);
-
-        refresh();
     binding.personajes.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_FirstFragment_to_SecondFragment));
-
+   // binding.Items.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.ThirdFragment));
     }
-    public void refresh() {
-        Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        String tipo= preferences.getString("Tipo", "");
-        if(!tipo.equals("")){
-
-        }
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Handler handler = new Handler(Looper.getMainLooper());
-
-        executor.execute(() -> {
-            IsaacApi api = new IsaacApi();
-            ArrayList<Personajes>  personajes = api.getPersonajes();
-
-            handler.post(() -> {
-                adapter.clear();
-                adapter.addAll(personajes);
-            });
-        });
-    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         if(item.getItemId() == R.id.refresh){
-            refresh();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -90,15 +58,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
-    class IsaacAdapter extends ArrayAdapter<Personajes> {
-        public IsaacAdapter(@NonNull Context context, int resource, @NonNull List objects) {
-            super(context, resource, objects);
-        }
-
-    }
-    
-
 }
