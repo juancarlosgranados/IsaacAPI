@@ -31,7 +31,7 @@ public class Personajes {
         this.image = image;
     }
 
-    public static String getDetailsUrl(String url) {
+    public String getDetailsUrl(String url) {
         return detailsUrl;
     }
 

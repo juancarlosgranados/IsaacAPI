@@ -4,14 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tboi1"
     tools:context=".FirstFragment">
 
     <ListView
-        android:layout_width="409dp"
-        android:layout_height="219dp"
+        android:id="@+id/lvisaac"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/Items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Bosses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bosses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Items"
+        app:layout_constraintStart_toStartOf="@+id/lvisaac"
+        app:layout_constraintTop_toTopOf="@+id/lvisaac" />
+
+    <Button
+        android:id="@+id/personajes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="personajes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Items"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
