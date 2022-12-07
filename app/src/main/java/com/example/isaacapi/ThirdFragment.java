@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.isaacapi.databinding.FragmentThirdBinding;
 
 
-public class ThirdFragment  extends Fragment {
+/*public class ThirdFragment  extends Fragment {
 
     private FragmentThirdBinding binding;
 
@@ -45,4 +45,4 @@ public class ThirdFragment  extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-}
+}*/

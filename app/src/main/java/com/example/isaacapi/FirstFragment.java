@@ -44,7 +44,7 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
     binding.personajes.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_FirstFragment_to_SecondFragment));
-
+   // binding.Items.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.ThirdFragment));
     }
 
     @Override
