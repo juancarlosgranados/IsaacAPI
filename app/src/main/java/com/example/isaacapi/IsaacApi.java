@@ -1,6 +1,7 @@
 package com.example.isaacapi;
 
 import android.net.Uri;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +27,7 @@ public class IsaacApi {
                 JSONArray results = jsonResult.getJSONArray("resultados");
 
                 ArrayList<Personajes> personajes = new ArrayList<>();
-
+                Log.e("asdads", String.valueOf(personajes));
                 for (int i = 0; i < resultados.length(); i++) {
                     JSONObject IsaacJson = results.getJSONObject(i);
 
@@ -39,12 +40,14 @@ public class IsaacApi {
                     persisaac.setImage(sprites);
 
                     personajes.add(persisaac);
-
+                System.out.println(personajes);
                 }
 
+                return personajes;
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
+
         }
         return null;
     }
