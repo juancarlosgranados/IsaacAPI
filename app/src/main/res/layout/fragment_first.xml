@@ -35,10 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bosses"
+        android:textColor="#E1BEE7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Items"
         app:layout_constraintStart_toStartOf="@+id/lvisaac"
-        app:layout_constraintTop_toTopOf="@+id/lvisaac" />
+        app:layout_constraintTop_toTopOf="@+id/lvisaac"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/personajes"
